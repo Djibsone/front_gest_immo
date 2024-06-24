@@ -8,7 +8,7 @@
  * @param {(s: string) => void} handleChange  
  */
 
-const Input = ({ type, name, className, value, placeholder, handleChange, label }) => (
+const Input = ({ type, name, multiple, className, value, placeholder, handleChange, label }) => (
     <div>
         <label className="block text-gray-700 text-sm font-bold mb-2">{label}</label>
         {type === 'textarea' ? (
@@ -23,6 +23,7 @@ const Input = ({ type, name, className, value, placeholder, handleChange, label 
             <input
                 type={type ?? 'text'}
                 name={name}
+                multiple={multiple ?? false}
                 className={`block w-full p-2 border border-gray-300 focus:outline-none focus:border-blue-400 rounded-md ${className}`}
                 value={value}
                 placeholder={placeholder}

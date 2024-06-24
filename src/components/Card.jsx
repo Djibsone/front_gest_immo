@@ -46,41 +46,22 @@ const Card = ({ property }) => {
             </div>
         </div>
     </div>
+
+    // <div class="bg-gray-100 md:px-10 px-4 py-1 font-[sans-serif]">
+    //   <div class="container mx-auto">
+    //     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    //       <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+    //         <img src={property.image} alt="Blog Post 1" class="w-full h-52 object-cover" />
+    //         <div class="p-6">
+    //           <h3 class="text-xl font-bold text-gray-800 mb-2">Lorem Ipsum Dolor</h3>
+    //           <p class="text-gray-600 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
+    //           <a href="javascript:void(0);" class="mt-4 inline-block text-blue-600 text-sm hover:underline">Read More</a>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   )
 }
 
 export default Card;
-
-/*
-<div class="bg-gray-100 md:px-10 px-4 py-12 font-[sans-serif]">
-      <div class="container mx-auto">
-        <h2 class="text-3xl font-extrabold text-gray-800 mb-8">Latest Blog Posts</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-            <img src="https://readymadeui.com/cardImg.webp" alt="Blog Post 1" class="w-full h-52 object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Lorem Ipsum Dolor</h3>
-              <p class="text-gray-600 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
-              <a href="javascript:void(0);" class="mt-4 inline-block text-blue-600 text-sm hover:underline">Read More</a>
-            </div>
-          </div>
-          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-            <img src="https://readymadeui.com/hotel-img.webp" alt="Blog Post 2" class="w-full h-52 object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Consectetur Adipiscing</h3>
-              <p class="text-gray-600 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
-              <a href="javascript:void(0);" class="mt-4 inline-block text-blue-600 text-sm hover:underline">Read More</a>
-            </div>
-          </div>
-          <div class="bg-white rounded-lg overflow-hidden shadow-lg">
-            <img src="https://readymadeui.com/team-image.webp" alt="Blog Post 3" class="w-full h-52 object-cover" />
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Lorem Ipsum Sit Amet</h3>
-              <p class="text-gray-600 text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore...</p>
-              <a href="javascript:void(0);" class="mt-4 inline-block text-blue-600 text-sm hover:underline">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    */
