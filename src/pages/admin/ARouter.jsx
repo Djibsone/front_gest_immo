@@ -14,7 +14,7 @@ const ARouter = () => {
             <Route element={<ALayout />}>
                 <Route index element={<Dashboard />} />
                 <Route path='/properties' element={<Properties />} />
-                <Route path='/propertie' element={<FormPropertie />} />
+                <Route path={'/propertie/:id' ? '/propertie/:id' : '/propertie'} element={<FormPropertie />} />
                 <Route path='/options' element={<Options />} />
                 <Route path='/option' element={<FormOption />} />
                 <Route path='*' element={<Error />} />

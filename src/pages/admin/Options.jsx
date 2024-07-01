@@ -31,7 +31,7 @@ const Options = () => {
                             <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
                         </div>
                         <input type="text" id="table-search" className="block p-2 pl-10 text-sm text-gray-700 w-80 bg-white focus:outline-none dark:placeholder-gray-400 border rounded-md overflow-hidden shadow" placeholder="Search for items" /> */}
-                        <Link to={'/admin/option'} className='bg-blue-600 text-white md:ml-8 px-3 py-1 rounded-md duration-500 md:static'>Ajouter une option</Link>
+                        <Link to={'/admin/option'} className='text-xl bg-blue-600 text-white md:ml-8 px-3 py-1 rounded-md duration-500 md:static'>Ajouter une option</Link>
                     </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -59,10 +59,10 @@ const Options = () => {
                                         {option.name}
                                     </td>
                                     <td className="px-6 py-4 flex items-center space-x-2">
-                                        <button className="text-blue-500 hover:text-blue-700" onClick={toggleModal}>
+                                        <button className="text-blue-500 hover:text-blue-700" onClick={''}>
                                             <Edit className="w-5 h-5" />
                                         </button>
-                                        <button className="text-red-500 hover:text-red-700">
+                                        <button className="text-red-500 hover:text-red-700" onClick={toggleModal}>
                                             <Trash className="w-5 h-5" />
                                         </button>
                                     </td>

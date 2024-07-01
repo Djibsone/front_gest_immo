@@ -1,22 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Edit, Trash } from 'lucide-react';
 import Modal from '../../components/Modal';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Properties = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [properties, setProperties] = useState([]);
+    const navigate = useNavigate();
 
     const toggleModal = () => {
         setIsOpen(!isOpen);
     }
 
-    const properties = [
-        {title:"Soluta totam ut et sed ea maxime deserunt maiores.", surface:62, price:12000, city:"Bouvet"},
-        {title:"Nobis quasi sit ut ut.", surface:40, price:10000, city:"Moreau"},
-        {title:"Sint ut et quam voluptatum mollitia ipsum ut.", surface:38, price:8000, city:"Noel"},
-        {title:"Aliquid odit dolorem quae maxime quaerat eveniet sint.", surface:98, price:15000, city:"Lagarde"},
-        {title:"Est hic ipsa et.", surface:110, price:20000, city:"Nguyennec"},
-    ];
+    // const properties = [
+    //     {id: 1, title:"Soluta totam ut et sed ea maxime deserunt maiores.", surface:62, price:12000, city:"Bouvet"},
+    //     {id: 2, title:"Nobis quasi sit ut ut.", surface:40, price:10000, city:"Moreau"},
+    //     {id: 3, title:"Sint ut et quam voluptatum mollitia ipsum ut.", surface:38, price:8000, city:"Noel"},
+    //     {id: 4, title:"Aliquid odit dolorem quae maxime quaerat eveniet sint.", surface:98, price:15000, city:"Lagarde"},
+    //     {id: 5, title:"Est hic ipsa et.", surface:110, price:20000, city:"Nguyennec"},
+    // ];
+
+    useEffect(() => {
+        axios.get(`http://127.0.0.1:8000/api/biens`)
+        .then(response => {
+            setProperties(response.data.data);
+        })
+        .catch(error => console.error('Error fetching property:', error));
+    }, []);
+
+    const handleEdit = (id) => {
+        navigate(`/admin/propertie/${id}`);
+    };
 
     return (
         <div className="mx-auto max-w-7xl py-6">
@@ -25,9 +40,8 @@ const Properties = () => {
                     <p className="inline-flex items-center bg-white font-medium text-sm px-3 py-1.5 border rounded-md overflow-hidden shadow">
                         Tous les biens
                     </p>
-                    <label className="sr-only">Search</label>
                     <div className="relative">
-                        <Link to={'/admin/propertie'} className='bg-blue-600 text-white md:ml-8 px-3 py-1 rounded-md duration-500 md:static'>Ajouter un bien</Link>
+                        <Link to={'/admin/propertie'} className='text-xl bg-blue-600 text-white md:ml-8 px-3 py-1 rounded-md duration-500 md:static'>Ajouter un bien</Link>
                     </div>
                 </div>
                 <div className="overflow-x-auto">
@@ -58,7 +72,7 @@ const Properties = () => {
                             {properties && properties.map((propertie, index) => (
                                 <tr className="bg-transparent text-gray-700 border rounded-md overflow-hidden shadow-md" key={index}>
                                     <td className="px-6 py-4">
-                                        {index}
+                                        {index + 1}
                                     </td>
                                     <td className="px-6 py-4">
                                         {propertie.title}
@@ -73,10 +87,10 @@ const Properties = () => {
                                         {propertie.city}
                                     </td>
                                     <td className="px-6 py-4 flex items-center space-x-2">
-                                        <button className="text-blue-500 hover:text-blue-700" onClick={toggleModal}>
+                                        <button className="text-blue-500 hover:text-blue-700" onClick={() => handleEdit(propertie.id)}>
                                             <Edit className="w-5 h-5" />
                                         </button>
-                                        <button className="text-red-500 hover:text-red-700">
+                                        <button className="text-red-500 hover:text-red-700" onClick={toggleModal}>
                                             <Trash className="w-5 h-5" />
                                         </button>
                                     </td>
